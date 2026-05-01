@@ -1,0 +1,265 @@
+/* Landing Page Styles */
+
+:root {
+  --color-white: #fff;
+  --color-antiwhite: #EDF2F4;
+  --color-coolgray: #8D99AE;
+  --color-gunmetal: #2B2D42;
+  --color-imperialred: #EF233C;
+  --color-candyred: #D90429;
+}
+
+html {
+  font-size: 14px;
+}
+
+.animated {
+  animation-duration: 500ms;
+}
+
+.btn {
+  border-radius: 2px;
+}
+
+.btn.btn-danger {
+  border-color: var(--color-candyred);
+  background-color: var(--color-imperialred);
+}
+
+.btn.btn-primary {
+  border-color: var(--color-gunmetal);
+  background-color: var(--color-gunmetal);
+}
+
+.btn.btn-default:hover {
+  background-color: #fafafa;
+}
+
+.top-hero {
+  background-color: #fafafa;
+  background-image: linear-gradient(rgba(43, 45, 66, 0.75), rgba(43, 45, 66, 0.75)), url("https://wallpapercave.com/wp/wp4035975.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  height: 100vh;
+  padding-top: 125px;
+  display: flex;
+  align-items: center;
+}
+
+.top-hero h1 {
+  color: var(--color-candyred);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 50%;
+  letter-spacing: -1px;
+  line-height: 0.9;
+}
+
+.top-hero p {
+  color: var(--color-antiwhite);
+}
+
+.top-nav {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.top-nav.sticky {
+  position: fixed;
+}
+
+.top-nav ul {
+  float: right;
+}
+
+.top-nav .signup-btn {
+  padding: 0.25em 0.5em;
+}
+
+.top-nav .signup-btn,
+.top-nav .signup-btn:hover {
+  color: var(--color-antiwhite) !important;
+  border-bottom: 1px solid var(--color-candyred) !important;
+  border-color: var(--color-candyred) !important;
+}
+
+.top-nav a {
+  font-size: 1.1rem;
+  color: var(--color-antiwhite);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  padding: 0 0 5px;
+  transition: 0.25s;
+}
+
+.top-nav a:hover {
+  color: var(--color-imperialred);
+  border-color: var(--color-imperialred);
+}
+
+.banner {
+  color: var(--color-antiwhite);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.banner .wrapper {
+  text-align: center;
+}
+
+.banner.speakers,
+.banner.signup {
+  background-color: var(--color-candyred);
+}
+
+.banner.speakers {
+  background-image: linear-gradient(rgba(217, 4, 41, 0.45), rgba(217, 4, 41, 0.45)), url("https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?dpr=1&auto=compress,format&fit=crop&w=1199&h=764&q=80&cs=tinysrgb&crop=&bg=");
+}
+
+.banner.learn {
+  background-color: var(--color-gunmetal);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/57208/article_full%402x.jpg");
+  height: auto;
+  padding: 60px 20px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+.step {
+  background-color: rgba(45, 45, 65, 0.85);
+  border-radius: 8px;
+  padding: 40px 30px;
+  text-align: center;
+  flex: 0 1 280px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--color-candyred);
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-candyred);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 auto 20px;
+}
+
+.step h4 {
+  color: var(--color-antiwhite);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.banner.signup {
+  background-image: linear-gradient(rgba(217, 4, 41, 0.45), rgba(217, 4, 41, 0.45)), url("https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?dpr=1&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=&bg=");
+}
+
+footer {
+  text-align: center;
+  background-color: var(--color-gunmetal);
+  color: var(--color-antiwhite);
+}
+
+footer .copyright {
+  padding: 0;
+  margin-top: 7px;
+  font-size: 0.9rem;
+}
+
+#speakers_modal .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .top-hero {
+    min-height: 400px;
+    padding-top: 50px;
+  }
+  
+  .top-hero h1 {
+    font-size: 36px;
+    margin-top: 50px;
+  }
+  
+  .banner {
+    min-height: auto;
+  }
+  
+  .banner h1,
+  .banner h2 {
+    font-size: 20px;
+  }
+
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .step {
+    flex: 0 1 100%;
+    max-width: 300px;
+    padding: 30px 20px;
+  }
+
+  .step-number {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .step h4 {
+    font-size: 1rem;
+  }
+
+  .step-number {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .step h4 {
+    font-size: 1rem;
+  }
+}

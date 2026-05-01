@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glyphicons/1.9.2/css/glyphicons.min.css">
+    <link rel="stylesheet" href="profile-style.css">
+    <title>User Profile</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">HiredIn</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-danger btn-sm" id="logoutBtn">Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic">
+                        <img id="profilePic" src="https://gravatar.com/avatar/31b64e4876d603ce78e04102c67d6144?s=80&d=https://codepen.io/assets/avatars/user-avatar-80x80-bdcd44a3bfb9a5fd01eb8b86f9e033fa1a9897c3a15b33adfc2649a002dab1b6.png" class="img-responsive" alt="Profile Picture">
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name" id="userName">
+                            User Name
+                        </div>
+                        <div class="profile-usertitle-job" id="userEmail">
+                            user@email.com
+                        </div>
+                    </div>
+                    <!-- END SIDEBAR USER TITLE -->
+                    <!-- SIDEBAR BUTTONS -->
+                    <div class="profile-userbuttons">
+                        <button type="button" class="btn btn-success btn-sm">Follow</button>
+                        <button type="button" class="btn btn-danger btn-sm">Message</button>
+                    </div>
+                    <!-- END SIDEBAR BUTTONS -->
+                    <!-- SIDEBAR MENU -->
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li class="active">
+                                <a href="#overview">
+                                    <i class="fas fa-home"></i>
+                                    Overview
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#settings">
+                                    <i class="fas fa-user"></i>
+                                    Account Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tasks">
+                                    <i class="fas fa-check"></i>
+                                    Tasks
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#help">
+                                    <i class="fas fa-flag"></i>
+                                    Help
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MENU -->
+                    
+                    <div class="portlet light bordered">
+                        <!-- STAT -->
+                        <div class="row list-separated profile-stat">
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="uppercase profile-stat-title">12</div>
+                                <div class="uppercase profile-stat-text">Events Applied</div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="uppercase profile-stat-title">8</div>
+                                <div class="uppercase profile-stat-text">Completed</div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="uppercase profile-stat-title">4</div>
+                                <div class="uppercase profile-stat-text">In Progress</div>
+                            </div>
+                        </div>
+                        <!-- END STAT -->
+                        <div>
+                            <h4 class="profile-desc-title">About</h4>
+                            <span class="profile-desc-text" id="aboutText">Lorem ipsum dolor sit amet diam nonummy nibh dolore.</span>
+                            <div class="margin-top-20 profile-desc-link">
+                                <i class="fas fa-globe"></i>
+                                <a href="#">View Website</a>
+                            </div>
+                            <div class="margin-top-20 profile-desc-link">
+                                <i class="fab fa-twitter"></i>
+                                <a href="#">@userhandle</a>
+                            </div>
+                            <div class="margin-top-20 profile-desc-link">
+                                <i class="fab fa-facebook"></i>
+                                <a href="#">User Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <h3>Welcome to Your Profile</h3>
+                    <p>Here you can manage your events, applications, and account settings.</p>
+                    
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h5>Recent Activity</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Your recent event applications and activities will appear here.</p>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h5>Applied Events</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Events you have applied to will be listed here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const userName = localStorage.getItem('userName');
+            const userEmail = localStorage.getItem('userEmail');
+            
+            // If user is not logged in, redirect to index.html
+            if (!userName || !userEmail) {
+                alert('Please log in to access your profile.');
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Update profile information
+            document.getElementById('userName').textContent = userName;
+            document.getElementById('userEmail').textContent = userEmail;
+
+            // Logout functionality
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                // Call backend logout endpoint
+                fetch('http://localhost:5000/logout', {
+                    method: 'GET',
+                    credentials: 'include'
+                }).then(() => {
+                    localStorage.removeItem('userName');
+                    localStorage.removeItem('userEmail');
+                    window.location.href = 'index.html';
+                }).catch(error => {
+                    console.error('Logout error:', error);
+                    // Still redirect even if backend call fails
+                    localStorage.removeItem('userName');
+                    localStorage.removeItem('userEmail');
+                    window.location.href = 'index.html';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

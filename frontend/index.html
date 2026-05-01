@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>HiredIn</title>
+    <style>
+        .message {
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="bootstrpConf">
+  <!-- Sign In Modal -->
+  <div id="signin_form_modal" class="modal fade" aria-hidden="true" role="dialog" aria-labelledby="signin_modal_label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="signin_modal_label">Sign In</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="signin_form">
+            <div class="message" id="signinMessage"></div>
+            <fieldset class="form-group">
+              <label for="signin_username">Username or Email:</label>
+              <input class="form-control" id="signin_username" name="username" placeholder="Username or Email" required>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="signin_password">Password:</label>
+              <input class="form-control" id="signin_password" name="password" type="password" placeholder="Password" required>
+            </fieldset>
+            <fieldset class="form-group m-t-2">
+              <button class="btn btn-danger btn-block" type="submit">Sign In</button>
+            </fieldset>
+            <p class="text-center">
+              Don't have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#signup_form_modal">Sign Up</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div id="signup_form_modal" class="modal fade" aria-hidden="true" role="dialog" aria-labelledby="signup_modal_label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="signup_modal_label">Sign Up Today!</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="signup_form">
+            <div class="message" id="signupMessage"></div>
+            <fieldset class="form-group">
+              <label for="fullname">Full Name:</label>
+              <input class="form-control" id="fullname" name="fullname" placeholder="Full Name" required>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="signup_email">Email:</label>
+              <input class="form-control" id="signup_email" name="email" type="email" placeholder="Email" required>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="signup_username">Username:</label>
+              <input class="form-control" id="signup_username" name="username" placeholder="Username" required>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="signup_password">Password:</label>
+              <input class="form-control" id="signup_password" name="password" type="password" placeholder="Password" required>
+            </fieldset>
+            <fieldset class="form-group m-t-2">
+              <button class="btn btn-danger btn-block" type="submit">Sign Up</button>
+            </fieldset>
+            <p class="text-center">
+              Already have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#signin_form_modal">Sign In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="top-nav m-b-3 p-t-1 animated fadeInDown clearfix">
+    <div class="container">
+      <ul class="list-unstyled list-inline">
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#home">Home</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#speakers">Events</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#locations">Volunteer</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#topics">How it works</a></li>
+        <!-- Auth Buttons (Hidden after login) -->
+        <li class="list-inline-item m-r-1 auth-buttons" id="authButtons">
+          <a href="#" class="btn signup-btn btn-danger btn-sm" data-toggle="modal" data-target="#signin_form_modal">Sign In</a>
+        </li>
+        <li class="list-inline-item m-r-0 auth-buttons" id="signupButton">
+          <a href="#" class="btn signup-btn btn-danger btn-sm" data-toggle="modal" data-target="#signup_form_modal">Sign Up</a>
+        </li>
+        <!-- Profile Button (Shown after login) -->
+        <li class="list-inline-item m-r-1 profile-buttons" id="profileButton" style="display: none;">
+          <a href="profile.html" class="btn signup-btn btn-danger btn-sm">Profile</a>
+        </li>
+        <li class="list-inline-item m-r-0 profile-buttons" id="logoutButton" style="display: none;">
+          <a href="#" class="btn signup-btn btn-danger btn-sm" id="logoutLink">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="top-hero jumbotron-fluid p-b-3 bg-faded">
+    <div class="container animated fadeInUp">
+      <h1 class="display-3">Work at concerts & events near you</h1>
+      <p class="lead m-t-1 m-b-2">Get real event experience — backstage, ticketing, security, and more..</p>
+      <button type="button" class="btn btn-lg btn-danger m-t-1" data-toggle="modal" data-target="#signup_form_modal">Find Events</button>
+      <button type="button" class="js-scroll btn btn-lg btn-default m-t-1" data-scroll-to="#speakers">Learn More</button>
+    </div>
+  </header>
+
+  <!-- How It Works Section -->
+  <section id="topics" class="banner learn p-y-3">
+    <div class="wrapper">
+      <h2 class="m-b-2 display-5 text-uppercase">How It Works</h2>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Create your profile</h4>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Apply to events near you</h4>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Work & build experience</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speakers Section -->
+  <section id="speakers" class="banner speakers p-y-3">
+    <div class="wrapper">
+      <h2 class="m-b-2 display-5 text-uppercase">Available Events</h2>
+      <a href="#" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#signup_form_modal">Post an Event</a>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <div id="locations" class="banner signup p-y-3">
+    <div class="wrapper">
+      <h2 class="m-b-2 display-5 text-uppercase">Don't Miss Out</h2>
+      <a href="#" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#signup_form_modal">Apply Now</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="p-y-2">
+    <p class="copyright"><span id="copyright-year">2016</span> Bootstrap Conference, All Rights Reserved</p>
+  </footer>
+</div>
+
+  <!-- jQuery and Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Your Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
