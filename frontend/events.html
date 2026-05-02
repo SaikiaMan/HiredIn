@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="events-style.css">
+    <title>Events - HiredIn</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="top-nav m-b-3 p-t-1 animated fadeInDown clearfix">
+        <div class="container">
+            <ul class="list-unstyled list-inline">
+                <li class="list-inline-item m-r-1"><a href="index.html" class="js-scroll">Home</a></li>
+                <li class="list-inline-item m-r-1"><a href="events.html" class="js-scroll">Events</a></li>
+                <li class="list-inline-item m-r-1"><a href="index.html" class="js-scroll">Volunteer</a></li>
+                <li class="list-inline-item m-r-1"><a href="index.html" class="js-scroll">How it works</a></li>
+                <!-- Auth Buttons -->
+                <li class="list-inline-item m-r-1 auth-buttons" id="authButtons">
+                    <a href="index.html" class="btn signup-btn btn-danger btn-sm">Sign In</a>
+                </li>
+                <li class="list-inline-item m-r-0 auth-buttons" id="signupButton">
+                    <a href="index.html" class="btn signup-btn btn-danger btn-sm">Sign Up</a>
+                </li>
+                <!-- Profile Button -->
+                <li class="list-inline-item m-r-1 profile-buttons" id="profileButton" style="display: none;">
+                    <a href="profile.html" class="btn signup-btn btn-danger btn-sm">Profile</a>
+                </li>
+                <li class="list-inline-item m-r-0 profile-buttons" id="logoutButton" style="display: none;">
+                    <a href="#" class="btn signup-btn btn-danger btn-sm" id="logoutLink">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Events Header -->
+    <div class="events-header">
+        <div class="container">
+            <h1>Available Events</h1>
+            <p class="lead">Discover volunteering opportunities at amazing events near you</p>
+        </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search events...">
+                </div>
+                <div class="col-md-3">
+                    <select id="categoryFilter" class="form-control">
+                        <option value="">All Categories</option>
+                        <option value="Concert">Concert</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Festival">Festival</option>
+                        <option value="Conference">Conference</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <input type="date" id="dateFilter" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Events Grid (YouTube-like) -->
+    <div class="container events-container">
+        <div class="events-grid" id="eventsGrid">
+            <!-- Events will be loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Event Detail Modal -->
+    <div id="eventDetailModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="eventImage" src="" alt="Event" class="img-fluid mb-3" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div class="event-details">
+                        <p><strong>📍 Location:</strong> <span id="eventLocation"></span></p>
+                        <p><strong>📅 Date:</strong> <span id="eventDate"></span></p>
+                        <p><strong>💰 Pay Rate:</strong> $<span id="eventPayRate"></span>/hour</p>
+                        <p><strong>👥 Volunteers Needed:</strong> <span id="eventVolunteersNeeded"></span></p>
+                        <p><strong>✅ Applied:</strong> <span id="eventVolunteersApplied"></span></p>
+                        <hr>
+                        <h6>About this event:</h6>
+                        <p id="eventDescription"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="applyBtn">Apply to Volunteer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="p-y-2">
+        <p class="copyright"><span id="copyright-year">2024</span> HiredIn, All Rights Reserved</p>
+    </footer>
+
+    <!-- jQuery and Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Events Scripts -->
+    <script src="events.js"></script>
+</body>
+</html>
